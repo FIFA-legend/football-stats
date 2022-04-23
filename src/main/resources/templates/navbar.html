@@ -1,0 +1,33 @@
+<nav class="navbar navbar-expand-lg navbar-dark" style="background-color: rgba(0,0,0,.5)">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="/matches">
+            <img src="https://skidka-msk.ru/images/prodacts/sourse/65651/65651347_myach-yaigrushka-myagkiy-futbol-10-sm-59506yaig.jpg" alt="" width="30" height="24" class="d-inline-block align-text-top">
+            FootballStats
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="/matches">Matches</a>
+                </li>
+                <li th:if="${role == T(by.bsuir.entity.Role).ADMIN}" class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Features
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li><a th:if="${role == T(by.bsuir.entity.Role).ADMIN}" class="dropdown-item" href="/admin">Users</a></li>
+                        <li><a class="dropdown-item" href="/team_registration">Team Registration</a></li>
+                        <li><a class="dropdown-item" href="/match_registration">Match Registration</a></li>
+                        <li><a class="dropdown-item" href="/match/update">Live Matches</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <form class="d-flex">
+                <a th:if="${role == null}" class="btn btn-outline-success" href="/login">Sign in</a>
+                <a th:if="${role != null}" class="btn btn-outline-success" href="/logout">Logout</a>
+            </form>
+        </div>
+    </div>
+</nav>

@@ -1,0 +1,23 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    background: linear-gradient(#141e30, #243b55);
+}
+
+p {
+    margin: 30px 0 10px;
+    padding: 0;
+    color: #fff;
+    text-align: center;
+    font-size: 36px;
+}
+
+.match_result {
+    margin: 10px 0;
+    padding: 0;
+    color: #fff;
+    text-align: center;
+    font-size: 30px;
+    text-decoration: none;
+}

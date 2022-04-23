@@ -1,0 +1,47 @@
+html {
+    background: #243b55;
+}
+
+body {
+    height: 100%;
+    margin:0;
+    padding:0;
+    font-family: sans-serif;
+    background: linear-gradient(#141e30, #243b55);
+}
+
+h2 {
+    margin: 30px 0 15px;
+    padding: 0;
+    color: #fff;
+    text-align: center;
+    font-size: 36px;
+}
+
+h3, span {
+    margin: 10px 0;
+    padding: 0;
+    color: #fff;
+    text-align: center;
+    font-size: 30px;
+}
+
+h4 {
+    margin: 10px 0;
+    padding: 0;
+    color: #fff;
+    text-align: center;
+    font-size: 20px;
+}
+
+.home_team_event {
+    max-width: 25%;
+    position: relative;
+    right: 10%;
+}
+
+.guest_team_event {
+    max-width: 25%;
+    position: relative;
+    left: 10%;
+}

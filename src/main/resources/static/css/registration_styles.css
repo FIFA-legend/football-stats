@@ -1,0 +1,148 @@
+html {
+    height: 100%;
+}
+
+body {
+    margin:0;
+    padding:0;
+    font-family: sans-serif;
+    background: linear-gradient(#141e30, #243b55);
+    color: white;
+}
+
+.box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 400px;
+    padding: 40px;
+    transform: translate(-50%, -50%);
+    background: rgba(0,0,0,.5);
+    box-sizing: border-box;
+    box-shadow: 0 15px 25px rgba(0,0,0,.6);
+    border-radius: 10px;
+}
+
+.box h2 {
+    margin: 0 0 30px;
+    padding: 0;
+    color: #fff;
+    text-align: center;
+}
+
+.box h5 {
+    margin: 0 0 10px;
+    padding: 0;
+    color: #03e9f4;
+    font-size: 12px;
+    text-align: left;
+}
+
+.box .user_input {
+    position: relative;
+}
+
+.box .user_input input {
+    width: 100%;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #fff;
+    margin-bottom: 10px;
+    border: none;
+    border-bottom: 1px solid #fff;
+    outline: none;
+    background: transparent;
+}
+.box .user_input label {
+    position: absolute;
+    top:0;
+    left: 0;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #fff;
+    pointer-events: none;
+    transition: .5s;
+}
+
+.box .user_input input:focus ~ label,
+.box .user_input input:valid ~ label {
+    top: -20px;
+    left: 0;
+    color: #03e9f4;
+    font-size: 12px;
+}
+
+.box .radio {
+    margin-bottom: 10px;
+}
+.box .radio input[type=radio] {
+    display: none;
+}
+
+.box .user_input input[type=radio] {
+    display: block;
+}
+
+.box .radio label {
+    display: inline-block;
+    cursor: pointer;
+    position: relative;
+    padding-left: 25px;
+    margin-right: 0;
+    line-height: 18px;
+    user-select: none;
+}
+.box .radio label:before {
+    content: "";
+    display: inline-block;
+    width: 17px;
+    height: 18px;
+    position: absolute;
+    left: 0;
+    bottom: 1px;
+}
+
+.button {
+    border-color: #0DB8DE;
+    color: #0DB8DE;
+    border-radius: 0;
+    font-weight: bold;
+    letter-spacing: 1px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+
+.button:hover {
+    background-color: #0DB8DE;
+    right: 0;
+}
+
+.save_btn {
+    float: left;
+}
+
+.save_button {
+    padding-right: 0;
+    text-align: right;
+    margin-bottom: 25px;
+}
+
+.login-text {
+    text-align: left;
+    padding-left: 0;
+    color: #A2A4A4;
+}
+
+.errors {
+    color: darkred;
+    font-size: 12px;
+    padding: 0;
+    margin: 0 0 20px;
+}
+
+.disabled {
+    display: none;
+}
+
+.form-check-label {
+    color: white;
+}
