@@ -14,6 +14,8 @@ public interface CountryService {
 
     List<GetCountryDto> getAll();
 
+    List<GetCountryDto> getByPage(int page, int count);
+
     List<GetCountryDto> getAllByContinent(Continent continent);
 
     GetCountryDto getById(Integer id) throws CountryNotFoundException;

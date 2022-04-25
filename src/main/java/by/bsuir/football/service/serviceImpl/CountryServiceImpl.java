@@ -11,6 +11,9 @@ import by.bsuir.football.service.exceptions.country.CountryNotFoundException;
 import by.bsuir.football.service.exceptions.country.DuplicateCountryCodeException;
 import by.bsuir.football.service.exceptions.country.DuplicateCountryNameException;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -28,8 +31,18 @@ public class CountryServiceImpl implements CountryService {
 
     @Override
     public List<GetCountryDto> getAll() {
-        List<Country> countries = (List<Country>) countryRepository.findAll();
+        List<Country> countries = (List<Country>) countryRepository.findAll(Sort.by("name"));
         return countries.stream()
+                .map(country -> new GetCountryDto(country.getId(), country.getName(), country.getCode(), country.getContinent()))
+                .collect(Collectors.toList());
+    }
+
+    @Override
+    public List<GetCountryDto> getByPage(int page, int count) {
+        Pageable pageable = PageRequest.of(page, count, Sort.by("name"));
+        List<Country> allCountriesByPage = countryRepository.findAll(pageable).toList();
+        return allCountriesByPage
+                .stream()
                 .map(country -> new GetCountryDto(country.getId(), country.getName(), country.getCode(), country.getContinent()))
                 .collect(Collectors.toList());
     }

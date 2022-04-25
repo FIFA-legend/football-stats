@@ -3,16 +3,17 @@ package by.bsuir.football.entity;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import org.hibernate.validator.constraints.NotEmpty;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.Min;
+import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 import java.util.Objects;
 
@@ -41,8 +42,15 @@ public class Venue {
     private String city;
 
     @NotNull
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.EAGER)
     private Country country;
+
+    public Venue(String name, Integer capacity, String city, Country country) {
+        this.name = name;
+        this.capacity = capacity;
+        this.city = city;
+        this.country = country;
+    }
 
     public Venue(Integer id, String name, Integer capacity, String city, Country country) {
         this.id = id;

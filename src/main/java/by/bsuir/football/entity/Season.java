@@ -39,6 +39,13 @@ public class Season {
     @Column(name = "end_date", nullable = false)
     private LocalDate endDate;
 
+    public Season(Boolean isCurrent, String name, LocalDate startDate, LocalDate endDate) {
+        this.isCurrent = isCurrent;
+        this.name = name;
+        this.startDate = startDate;
+        this.endDate = endDate;
+    }
+
     public Season(Integer id, Boolean isCurrent, String name, LocalDate startDate, LocalDate endDate) {
         this.id = id;
         this.isCurrent = isCurrent;

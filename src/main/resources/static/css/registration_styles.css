@@ -64,6 +64,7 @@ body {
     transition: .5s;
 }
 
+.box .user_input input[type=date] ~ label,
 .box .user_input input:focus ~ label,
 .box .user_input input:valid ~ label {
     top: -20px;

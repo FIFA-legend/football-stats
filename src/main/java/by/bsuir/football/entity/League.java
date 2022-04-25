@@ -6,6 +6,7 @@ import lombok.Setter;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -32,8 +33,13 @@ public class League {
     private String name;
 
     @NotNull
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.EAGER)
     private Country country;
+
+    public League(String name, Country country) {
+        this.name = name;
+        this.country = country;
+    }
 
     public League(Integer id, String name, Country country) {
         this.id = id;

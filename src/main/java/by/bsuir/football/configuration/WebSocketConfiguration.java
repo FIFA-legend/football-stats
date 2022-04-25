@@ -12,8 +12,10 @@ public class WebSocketConfiguration implements WebSocketMessageBrokerConfigurer 
 
     @Override
     public void configureMessageBroker(MessageBrokerRegistry registry) {
-        registry.enableSimpleBroker("/queue/admin/users/return", "/queue/admin/users/updated",
-                "/queue/matches/return", "/queue/teams/select", "/match/score/update");
+        registry.enableSimpleBroker("/queue/admin/users/return", "/queue/countries/return",
+                "/queue/leagues/return", "/queue/seasons/return", "/queue/teams/return",
+                "/queue/venues/return", "/queue/matches/return",
+                "/queue/teams/select", "/match/score/update");
         registry.setApplicationDestinationPrefixes("/websockets");
         registry.setUserDestinationPrefix("/user");
     }

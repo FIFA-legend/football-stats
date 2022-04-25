@@ -10,6 +10,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.NotEmpty;
 import java.util.Objects;
 
 @Getter
@@ -24,8 +25,13 @@ public class Stage {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
+    @NotEmpty
     @Column(name = "name", nullable = false, unique = true)
     private String name;
+
+    public Stage(String name) {
+        this.name = name;
+    }
 
     public Stage(Integer id, String name) {
         this.id = id;
